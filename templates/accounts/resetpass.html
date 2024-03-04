@@ -7,10 +7,16 @@ Reset Password
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <h2 class="text-center mb-4">Password Reset</h2>
-        <form>
+        <form method="POST">
+          {% csrf_token %}
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hey!</strong> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div><br><br>
+          {% endfor %}
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="hidden" class="form-control" name="user_id" value="{{prof.user.id}}" required>
           </div>
           <div class="mb-3">
             <label for="new_password" class="form-label">New Password</label>

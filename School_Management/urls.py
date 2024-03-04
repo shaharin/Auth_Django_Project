@@ -6,6 +6,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Accounts.urls')),
+    path('cv/', include('CVMake.urls')),
 ]
 
 if settings.DEBUG:

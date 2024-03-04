@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+        <h1 class="mb-4">CV Form</h1>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Personal Information -->
+            <h2>Personal Information</h2>
+           <div class="col-md-6">
+         <label class="col-sm-2 col-form-label col-form-label-sm">Full Name</label>
+          <input type="text" class="form-control form-control-sm" name="name">
+        </div>
+            <div class="col-md-6">
+        <label class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+        <input type="text" class="form-control form-control-sm" name="email">
+      </div>
+            <div class="col-md-6">
+        <label class="col-sm-2 col-form-label col-form-label-sm">Phone</label>
+        <input type="text" class="form-control form-control-sm" name="phone">
+        </div>
+            <div class="col-md-6">
+         <label class="col-sm-2 col-form-label col-form-label-sm">Gender</label>
+          <input type="text" class="form-control form-control-sm" name="gender">
+        </div>
+            <div class="col-md-6">
+    <label class="col-sm-2 col-form-label col-form-label-sm">Religion</label>
+    <input type="text" class="form-control form-control-sm" name="religion">
+    </div>
+            <div class="col-12">
+    <label class="form-label">Address</label>
+    <input type="text" class="form-control" name="address" placeholder="1234 Main St">
+  </div>
+
+            <!-- Education -->
+            <h2>Education</h2>
+            <div class="mb-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Degree</th>
+                      <th scope="col">Passing Year</th>
+                      <th scope="col">Result</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="tel" class="form-control" id="degree" name="degree" required></td>
+                        <td><input type="tel" class="form-control" id="passing_year" name="passing_year" required></td>
+                        <td><input type="tel" class="form-control" id="result" name="result" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="tel" class="form-control" name="degree1" required></td>
+                        <td><input type="tel" class="form-control" name="passing_year2" required></td>
+                        <td><input type="tel" class="form-control"  name="result3" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="tel" class="form-control"  name="degree2" required></td>
+                        <td><input type="tel" class="form-control"  name="passing_year2" required></td>
+                        <td><input type="tel" class="form-control"  name="result2" required></td>
+                    </tr>
+                    </tbody>
+                    </table>
+
+            </div>
+
+            <!-- Work Experience -->
+            <h2>Work Experience</h2>
+            <div class="mb-3">
+                <textarea class="form-control" name="workExperience" rows="4" required></textarea>
+            </div>
+
+            <!-- Skills -->
+            <h2>Skills</h2>
+            <div class="mb-3">
+                <textarea class="form-control" name="skills" rows="4"></textarea>
+            </div>
+
+            <h2>Career Objectives</h2>
+            <div class="mb-3">
+                <textarea class="form-control" name="objectives" rows="4"></textarea>
+            </div>
+
+            <!-- Image Upload -->
+            <h2>Upload Image</h2>
+            <div class="mb-3">
+                <label for="image" class="form-label">Choose a profile picture:</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button><br><br>
+
+        </form>
+    </div>
+
+
+{% endblock %}
